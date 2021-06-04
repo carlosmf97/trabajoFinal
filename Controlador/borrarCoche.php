@@ -3,13 +3,9 @@ session_start();
 include '../Modelo/Usuario.php';
 
 $idCoche = $_REQUEST['idCoche'];
+$idUsuario = $_SESSION['id'];
 
 Usuario::borrarCoche($idCoche);
+Usuario::quitarFavoritos($idUsuario, $idCoche);
 
-if(isset($_SESSION['tipo'])){
-    if($_SESSION['tipo']=="1"){
-        header("Location: ../Controlador/cargarPerfil.php");
-    }else{
-        header("Location: ../Controlador/cargarUsuarios.php");
-    }
-}
+header("Location: ../Controlador/cargarPerfil.php");
