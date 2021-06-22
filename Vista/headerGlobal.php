@@ -25,6 +25,9 @@
                   echo '</li>';
                 }
               ?>
+              <li class="nav-item">
+                <a class="nav-link" href="../Vista/ayuda.php">Ayuda</a>
+              </li>
             </ul>
             
             <form class="form-inline my-2 my-lg-0" action="../Controlador/cochesFavoritos.php" method="post">
